@@ -1,0 +1,994 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Quicksand:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <style>
+      .nav-item > a {
+        font-size: 12px;
+      }
+
+      .nav-item > .nav-link:hover,
+      .active {
+        color: rgb(131, 19, 131) !important;
+        border-bottom: 2px solid rgb(131, 19, 131);
+      }
+
+      body {
+        background-color: pink;
+        color: black;
+        -webkit-font-smoothing: antialiased;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      .font-display {
+        font-family: "Quicksand", sans-serif;
+        font-weight: 700;
+        color: black;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .bg-custom {
+        background-color: rgba(212, 107, 151, 0.8);
+      }
+
+      .nav-item > a {
+        font-size: 14px;
+      }
+
+      .text-content h1 {
+        font-size: 3rem;
+        line-height: 1.12;
+      }
+
+      @media (max-width: 768px) {
+        .text-content h1 {
+          font-size: 2rem;
+        }
+      }
+
+      .hero-section {
+        position: relative;
+        overflow: hidden;
+        padding: 4rem 0 5rem;
+      }
+
+      /* Maskot animasi */
+      @keyframes floatmascot {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-10px) rotate(1.5deg);
+        }
+      }
+      .animate-mascot {
+        animation: floatMascot 4.5s ease-in-out infinite;
+      }
+
+      .hero-image-wrapper {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .hero-pod {
+        position: absolute;
+        inset: 1rem;
+        background: linear-gradient(
+          180deg,
+          #fff 0%,
+          rgba(252, 231, 236, 0.4) 60%,
+          #fff8f0 100%
+        );
+        border-radius: 44px;
+        box-shadow: 0 14px 28px -6px rgba(252, 231, 236, 0.4);
+        border: 4px solid #fff;
+        transform: rotate(2deg);
+      }
+
+      /* TRUST BAR */
+      .trust-bar {
+        padding: 2rem 0;
+        background-color: #fff8f0;
+        border-top: 1px solid #fff;
+        border-bottom: 1px solid #73575c;
+      }
+      .trust-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        background-color: floralwhite;
+        color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      /* =============== KATEGORI =============== */
+      .kategori-card {
+        background: #fff;
+        border: 1px solid  #73575c;
+        border-radius: 24px;
+        padding: 1.5rem 1rem;
+        text-align: center;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        height: 100%;
+        margin-top: 15px;
+      }
+      .kategori-card:hover {
+        box-shadow: 0 14px 28px -6px rgb(131, 19, 131);
+        transform: translate(-3px);
+      }
+      .kategori-icon {
+        width: 64px;
+        height: 64px;
+        margin: 0 auto 1rem;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.75rem;
+        background-color: pink;
+        color: blue;
+        transition: transform 0.3s ease;
+      }
+      .text-green{
+        display: block;
+        text-align: center;
+        
+      }
+      .kategori-card:hover .kategori-icon {transform: scale(1.1); }
+
+      /* ==================== BEST SELLER ==================== */
+      .bestseller-section {
+        padding: 4rem 0;
+        background-color: #fff;
+        border-top: 1px solid #F2CED6;
+        border-bottom: 1px solid #F2CED6;
+      }
+      .product-card {
+        background-color: #FFF2F5;
+        border: 1px solid #F2CED6;
+        border-radius: 30px;
+        padding: 1.25rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        transition: all 0.3s ease;
+      }
+      .product-card:hover {
+        box-shadow: 0 14px 28px -6px rgba(216, 67, 96, 0.12);
+      }
+      .product-img-wrap {
+        position: relative;
+        height: 220px;
+        background-color: #fff8f0;
+        border: 1px solid #F2CED6;
+        border-radius: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+      .product-img-wrap.choco {background-color: rgba(255, 238, 200); }
+      .product-tag {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        background-color: rgb(255, 255, 255, 0.95);
+        padding: 0.25rem 0.75rem;
+        border-radius: 999px;
+        font-size: 11px;
+        font-weight: 700;
+        color: #D84360;
+        border: 1px solid #F2CED6;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+      }
+      .product-tag.green { color: #5B8A61; }
+      .product-tag .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #D84360;
+      }
+      .product-tag.green .dot { background-color: #5B8A61; }
+      .product-icon {
+        width: 200px;
+        height: 200px;
+        transition: transform 0.3s ease;
+      }
+      .product-card:hover .product-icon { transform: scale(1.05); }
+
+      .product-footer {
+        margin-top: 1.5rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(242, 206, 214, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .tentang-section { padding: 4rem 0; }
+.tentang-card {
+  background-color: #fff8f0;
+  border: 1px solid #f2CED6;
+  border-radius: 36px;
+  padding: 3rem 2rem;
+  box-shadow: 0 14px -6px rgba(216, 67, 96, 0.12);
+}
+
+.mascot-badge-circle {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+
+.testimoni-section {
+    padding: 4rem 0;
+    background-color: palevioletred ;
+    border-top: 1px solid #F2CED6;
+    border-bottom: 1px solid #F2CED6;
+}
+
+.testi-card {
+    background-color: #FFF2F5;
+    border: 1px solid #F2CED6;
+    border-radius: 24px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.testi-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    background-color: #FCE7EC;
+    color: #D84360;
+}
+
+.testi-avatar.cream {
+    background-color: #FFF8F0;
+    color: #2C1A1D;
+}
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-custom sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="gambar/logo.png" alt="" width="50" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Kategori</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Menu Favorite</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Tentang Risol Fanya</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Testimoni</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav gap-2">
+            <li class="nav-item">
+              <a href="#" class="btn btn-light position-relative rounded-pill">
+                <i class="bi bi-cart3"></i>
+                <span
+                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary"
+                >
+                  99+
+                  <span class="visually-hidden">Keranjang Kosong</span>
+                </span>
+              </a>
+              <a href="#" class="fw-bold btn btn-danger">Pesan Sekarang</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main id="main-content">
+      <!-- HERO SECTION -->
+      <section class="hero-section" id="home">
+        <div class="container position-relative" style="z-index: 1">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-7 text-content text-center text-lg-start">
+              <h1 class="mb-3">
+                Sekali Gigit, Langsung Suka!
+                <span class="text-danger">Risol Fanya</span>
+              </h1>
+              <p
+                class="text-secondary mb-4 mx-auto mx-lg-0"
+                style="max-width: 36rem; color: #73575c !important"
+              >
+                Risol Fanya hadir dengan rasa gurih, kulit renyah, dan isian
+                lezat yang siap bikin waktu ngemil kamu makin seru.
+              </p>
+              <div
+                class="action d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start"
+              >
+                <a
+                  href="#"
+                  class="btn btn-danger fw-bold px-4 py-3 rounded-4 d-inline-flex align-items-center justify-content-center gap-2"
+                  >Lihat Menu</a
+                >
+                <a
+                  href="#"
+                  class="btn btn-light fw-bold px-4 py-3 rounded-4 border"
+                  >Pesan Sekarang</a
+                >
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="hero-image-wrapper">
+                <div class="hero-pod"></div>
+                <img
+                  src="gambar/logo_risol-removebg.png"
+                  alt="risol fanya"
+                  class="img-fluid"
+                  style="z-index: 1; max-width: 380px"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust-bar">
+        <div class="container">
+          <div class="row g-4 text-center">
+            <div class="col-6 col-md-3">
+              <div
+                class="d-flex align-items-center justify-content-center gap-3"
+              >
+                <div class="trust-icon">
+                  <i class="bi-egg-fried"></i>
+                </div>
+                <div class="text-start">
+                  <h4 class="h6 mb-0 fw-bold">Risol Gurih dan Lezat</h4>
+                  <p class="small text-secondary mb-0">
+                    Cocok untuk camilan di berbagai kesempatan
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div
+                class="d-flex align-items-center justify-content-center gap-3"
+              >
+                <div class="trust-icon">
+                  <i class="bi-clock"></i>
+                </div>
+                <div class="text-start">
+                  <h4 class="h6 mb-0 fw-bold">Dimasak Setiap Sore</h4>
+                  <p class="small text-secondary mb-0">
+                    Risol disiapkan setiap sore untuk pelanggan
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div
+                class="d-flex align-items-center justify-content-center gap-3"
+              >
+                <div class="trust-icon">
+                  <i class="bi-bag-check"></i>
+                </div>
+                <div class="text-start">
+                  <h4 class="h6 mb-0 fw-bold">Camilan Praktis</h4>
+                  <p class="small text-secondary mb-0">
+                    Mudah dinikmati kapan saja dan di mana saja
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div
+                class="d-flex align-items-center justify-content-center gap-3"
+              >
+                <div class="trust-icon">
+                  <i class="bi-heart"></i>
+                </div>
+                <div class="text-start">
+                  <h4 class="h6 mb-0 fw-bold">Pilihan untuk Bersantai</h4>
+                  <p class="small text-secondary mb-0">
+                    Nikmati risol saat waktu santai bersama
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- KATEGORI CONTENT -->
+       <section id="kategori" class="py-5">
+        <div class="container">
+          <span class="text-danger text-green fw bold text-uppercase small" style="letter-spacing: .05em;">Pilihan Risol Fanya</span>
+          <h2 class="mt-1 text-center">Nikmati Aneka Pilihan Risol</h2>
+
+        <div class="row g-4">
+           
+          <div class="col-6 col-md-3">
+            <div class="kategori-card">
+              <div class="kategori-icon">
+                <img src="gambar/risol mayo.webp" alt="" width="50" height="50">
+              </div>
+              <h3 class="h6 mb-1">Risol Mayo</h3>
+              <p class="small text-secondary mb-0">Risol dengan isian mayo yang gurih</p>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3">
+            <div class="kategori-card">
+              <div class="kategori-icon">
+                <img src="gambar/risol coklat.jfif" alt="" width="50" height="50">
+              </div>
+              <h3 class="h6 mb-1">Risol Coklat</h3>
+              <p class="small text-secondary mb-0">Risol dengan isian coklat yang lezat</p>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3">
+            <div class="kategori-card">
+              <div class="kategori-icon">
+               <img src="gambar/risol ayam.jfif" alt="" width="50" height="50">
+              </div>
+              <h3 class="h6 mb-1">Risol Ayam</h3>
+              <p class="small text-secondary mb-0">Risol berisi olahan ayam yang gurih</p>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3">
+             <div class="kategori-card">
+              <div class="kategori-icon">
+              <img src="gambar/risol sayur.jpeg" alt="" width="50" height="50">
+              </div>
+              <h3 class="h6 mb-1">Risol Sayur</h3>
+              <p class="small text-secondary mb-0">Risol dengan isian sayuran yang nikmat</p>
+            </div>
+          </div>
+        </div>
+        </div>
+      </section>
+
+
+<!-- ==================== BEST SELLER ==================== -->
+<section id="bestseller" class="bestseller-section">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="mb-5">
+      <div>
+        <span
+          class="text-danger fw-bold text-uppercase small"
+          style="letter-spacing: .05em;"
+        >
+          Risol Fanya
+        </span>
+
+        <h2 class="mt-1">Menu unggulan minggu ini</h2>
+
+        <p
+          class="text-secondary small mb-0 mt-2"
+          style="max-width: 24rem;"
+        >
+          Nikmati Risol Fanya yang renyah dengan isian lezat.
+          Cocok untuk camilan bersama keluarga dan teman.
+        </p>
+      </div>
+    </div>
+
+    <!-- Product List -->
+    <div class="row g-4">
+
+      <!-- ==================== CARD 1 : RISOL AYAM ==================== -->
+      <div class="col-md-6 col-lg-4">
+        <article class="product-card h-100">
+
+          <!-- Image -->
+          <div class="product-img-wrap">
+
+            <div class="product-tag">
+              <span class="dot"></span>
+              <span>Risol Fanya</span>
+            </div>
+
+            <img
+              src="gambar/risol ayam.jfif"
+              class="product-icon"
+              alt="Risol Ayam"
+            >
+
+          </div>
+
+          <!-- Product Info -->
+          <div class="mt-3">
+
+            <div class="d-flex align-items-center justify-content-between">
+              <span
+                class="small fw-semibold text-secondary text-uppercase"
+                style="letter-spacing: .05em;"
+              >
+                Risol Fanya
+              </span>
+
+              <span class="small fw-bold text-warning">
+                <i class="bi bi-star-fill"></i>
+                4.9 (184)
+              </span>
+            </div>
+
+            <h3 class="h5 mt-2 mb-1">
+              Risol Ayam
+            </h3>
+
+            <p class="small text-secondary mb-0">
+              Risol dengan isian ayam yang gurih dan lezat,
+              dibalut kulit renyah.
+            </p>
+
+          </div>
+
+          <!-- Footer -->
+          <div class="product-footer d-flex align-items-center justify-content-between mt-3">
+
+            <div>
+              <span
+                class="d-block"
+                style="font-size: 11px; color: #73575c;"
+              >
+                Harga per pcs
+              </span>
+
+              <span class="font-display fw-bold fs-5">
+                Rp 5.000
+              </span>
+            </div>
+
+            <button
+              onclick="handleAddToCart('Risol Ayam', 5000)"
+              class="btn btn-danger btn-sm fw-bold rounded-3 d-inline-flex align-items-center gap-2"
+            >
+              <i class="bi bi-plus-lg"></i>
+              Pesan
+            </button>
+
+          </div>
+
+        </article>
+      </div>
+
+
+      <!-- ==================== CARD 2 : RISOL MAYO ==================== -->
+      <div class="col-md-6 col-lg-4">
+        <article class="product-card h-100">
+
+          <!-- Image -->
+          <div class="product-img-wrap">
+
+            <div class="product-tag">
+              <span class="dot"></span>
+              <span>Risol Fanya</span>
+            </div>
+
+            <img
+              src="gambar/risol mayo.webp"
+              class="product-icon"
+              alt="Risol Mayo"
+            >
+
+          </div>
+
+          <!-- Product Info -->
+          <div class="mt-3">
+
+            <div class="d-flex align-items-center justify-content-between">
+              <span
+                class="small fw-semibold text-secondary text-uppercase"
+                style="letter-spacing: .05em;"
+              >
+                Risol Fanya
+              </span>
+
+              <span class="small fw-bold text-warning">
+                <i class="bi bi-star-fill"></i>
+                4.9 (156)
+              </span>
+            </div>
+
+            <h3 class="h5 mt-2 mb-1">
+              Risol Mayo
+            </h3>
+
+            <p class="small text-secondary mb-0">
+              Risol dengan isian mayo yang creamy,
+              gurih, dan lezat.
+            </p>
+
+          </div>
+
+          <!-- Footer -->
+          <div class="product-footer d-flex align-items-center justify-content-between mt-3">
+
+            <div>
+              <span
+                class="d-block"
+                style="font-size: 11px; color: #73575c;"
+              >
+                Harga per pcs
+              </span>
+
+              <span class="font-display fw-bold fs-5">
+                Rp 5.000
+              </span>
+            </div>
+
+            <button
+              onclick="handleAddToCart('Risol Mayo', 5000)"
+              class="btn btn-danger btn-sm fw-bold rounded-3 d-inline-flex align-items-center gap-2"
+            >
+              <i class="bi bi-plus-lg"></i>
+              Pesan
+            </button>
+
+          </div>
+
+        </article>
+      </div>
+
+
+      <!-- ==================== CARD 3 : RISOL COKLAT ==================== -->
+      <div class="col-md-6 col-lg-4">
+        <article class="product-card h-100">
+
+          <!-- Image -->
+          <div class="product-img-wrap">
+
+            <div class="product-tag">
+              <span class="dot"></span>
+              <span>Risol Fanya</span>
+            </div>
+
+            <img
+              src="gambar/risol coklat.jfif"
+              class="product-icon"
+              alt="Risol Coklat"
+            >
+
+          </div>
+
+          <!-- Product Info -->
+          <div class="mt-3">
+
+            <div class="d-flex align-items-center justify-content-between">
+              <span
+                class="small fw-semibold text-secondary text-uppercase"
+                style="letter-spacing: .05em;"
+              >
+                Risol Fanya
+              </span>
+
+              <span class="small fw-bold text-warning">
+                <i class="bi bi-star-fill"></i>
+                4.8 (132)
+              </span>
+            </div>
+
+            <h3 class="h5 mt-2 mb-1">
+              Risol Coklat
+            </h3>
+
+            <p class="small text-secondary mb-0">
+              Risol dengan isian coklat manis dan lezat,
+              cocok untuk camilan.
+            </p>
+
+          </div>
+
+          <!-- Footer -->
+          <div class="product-footer d-flex align-items-center justify-content-between mt-3">
+
+            <div>
+              <span
+                class="d-block"
+                style="font-size: 11px; color: #73575c;"
+              >
+                Harga per pcs
+              </span>
+
+              <span class="font-display fw-bold fs-5">
+                Rp 5.000
+              </span>
+            </div>
+
+            <button
+              onclick="handleAddToCart('Risol Coklat', 5000)"
+              class="btn btn-danger btn-sm fw-bold rounded-3 d-inline-flex align-items-center gap-2"
+            >
+              <i class="bi bi-plus-lg"></i>
+              Pesan
+            </button>
+
+          </div>
+
+        </article>
+      </div>
+
+    </div>
+    <!-- End Product List -->
+
+  </div>
+</section>
+<!-- ==================== END BEST SELLER ==================== -->
+
+       <!-- ====== -->
+        <section id="tentang" class="tentang-section">
+        <div class="container">
+          <div class="tentang-card">
+            <div class="row g-5 align-items-center">
+              <div class="col-lg-5 text-center">
+                <div class="mascot-badge-circle">
+                  <img src="gambar/risol remove.png" alt="" class="img-fluid">
+                  </div>
+                  <h3 class="h5 mt-4">Risol Fanya, Camilan Favorit</h3>
+                  <p class="small text-secondary mb-0">Risol Fanya hadir dengan pilihan rasa yang cocok dinikmati kapan saja, baik saat santai maupun bersama orang-orang tersayang.l;'
+
+                  </p>
+                </div>
+
+              <div class="col-lg-7">
+                <span class="text-danger fw-bold text-uppercase small" style="letter-spacing: .05em;">Tentang Risol Fanya</span>
+                <h2 class="mt-2">Kenikmatan Risol Fanya untuk Setiap Momen</h2>
+                <p class="text-secondary">
+                  Risol Fanya hadir sebagai brand makanan yang menyajikan risol dengan rasa yang lezat dan pilihan isian yang menarik. 
+                  Dengan konsep yang sederhana dan cocok dinikmati kapan saja, Risol Fanya ingin menjadi
+                  pilihan camilan yang dapat menemani waktu santai, berkumpul bersama keluarga, maupun momen bersama teman.
+                </p>
+                <div class="row g-3 pt-2">
+                  <div class="col-sm-6">
+                  <div class="bg-white rounded-3 border p-3 small fw-semibold d-flex align-items-center gap-2"
+                   style="border-color: #f2CED6 !important;">
+                   <span class="d-inline-block rounded-circle bg-danger" style="width: 8px; height: 8px;"></span>
+                   Beragam Pilihan Risol
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="bg-white rounded-3 border p-3 small fw-semibold d-flex align-items-center gap-2"
+                   style="border-color: #f2CED6 !important;">
+                   <span class="d-inline-block rounded-circle bg-danger" style="width: 8px; height: 8px;"></span>
+                   Praktis untuk Dinikmati
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+        </section>
+
+        <!-- ===== TESTIMONI ===== -->
+         <section id="testimoni" class="testimoni-section">
+        <div class="container">
+          <div class="text-center mx-auto mb-5" style="max-width: 36rem;">
+            <span class="text-danger fw-bold text-uppercase small" style="letter-spacing: .05em;">kata mereka</span>
+            <h2 class="mt-1">ulasan pelanggan setia</h2>
+          </div>
+
+          <div class="carousel slide" id="carouselExampleSlideOnly" data-bs-ride="carousel" data-bs-interval="3000">
+            <div class="carousel-inner">
+              <!-- SLIDE 1 -->
+               <div class="carousel-item active"
+               style="color: black !important; border: none !important">
+               <div class="row g-4">
+            <div class="col-md-4">
+              <div class="testi-card">
+                <div>
+                  <div class="text-warning mb-2">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <p class="small mb-0">Risolnya enak banget, rasanya pas dan cocok banget buat cemilan. pasti mau beli lagi</p>
+                </div>
+                <div class="d-flex align-items-center gap-3 mt-4 pt-3 border-top">
+                  <img src="gambar/aqeela.jfif" alt="" class="testi-avatar">
+                  <div>
+                    <h4 class="h6 mb-0">Aqeela</h4>
+                    <span class="small text-secondary">Cibubur</span>
+                  </div>
+                </div>
+               </div>
+            </div>
+            <div class="col-md-4">
+              <div class="testi-card">
+                <div>
+                  <div class="text-warning mb-2">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <p class="small mb-0">Risol Fanya recommended banget, rasanya enak dan cocok untuk jadi camilan kapan saja</p>
+                </div>
+                <div class="d-flex align-items-center gap-3 mt-4 pt-3 border-top">
+                  <img src="gambar/fattah.jpg" alt="" class="testi-avatar">
+                  <div>
+                    <h4 class="h6 mb-0">Fatah</h4>
+                    <span class="small text-secondary">Bandung</span>
+                  </div>
+                </div>
+               </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="testi-card">
+                <div>
+                  <div class="text-warning mb-2">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <p class="small mb-0">Risol Fanya enak banget, rasanya pas dan cocok untuk camilan saat santai. suka banget</p>
+                </div>
+                <div class="d-flex align-items-center gap-3 mt-4 pt-3 border-top">
+                  <img src="gambar/arya mohan.webp" alt="" class="testi-avatar">
+                  <div>
+                    <h4 class="h6 mb-0">Arya</h4>
+                    <span class="small text-secondary">Jakarta</span>
+                  </div>
+                </div>
+               </div>
+            </div>
+
+          </div>
+
+              </div>
+              <!-- SLIDE 2 -->
+               <div
+               class="carousel-item"
+               style="color: black !important; border: none !important">
+               <div class="row g-4">
+            <div class="col-md-4">
+              <div class="testi-card">
+                <div>
+                  <div class="text-warning mb-2">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i> 
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <p class="small mb-0">“Risolnya enak banget, rasanya pas dan cocok banget buat cemilan. pasti mau beli lagi</p>
+                </div>
+                <div class="d-flex align-items-center gap-3 mt-4 pt-3 border-top">
+                  <img src="gambar/aqeela.jfif" alt="" class="testi-avatar">
+                  <div>
+                    <h4 class="h6 mb-0">Calista</h4>
+                    <span class="small text-secondary">Cibubur</span>
+                  </div>
+                </div>
+               </div>
+            </div>
+            <div class="col-md-4">
+              <div class="testi-card">
+                <div>
+                  <div class="text-warning mb-2">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <p class="small mb-0">Risol Fanya recommended banget, rasanya enak dan cocok untuk jadi camilan kapan saja</p>
+                </div>
+                <div class="d-flex align-items-center gap-3 mt-4 pt-3 border-top">
+                  <img src="gambar/fattah.jpg" alt="" class="testi-avatar">
+                  <div>
+                    <h4 class="h6 mb-0">Syach</h4>
+                    <span class="small text-secondary">Bandung</span>
+                  </div>
+                </div>
+               </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="testi-card">
+                <div>
+                  <div class="text-warning mb-2">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <p class="small mb-0">Risol Fanya enak banget, rasanya pas dan cocok untuk camilan saat santai. suka banget</p>
+                </div>
+                <div class="d-flex align-items-center gap-3 mt-4 pt-3 border-top">
+                  <img src="gambar/arya mohan.webp" alt="" class="testi-avatar">
+                  <div>
+                    <h4 class="h6 mb-0">Mohan</h4>
+                    <span class="small text-secondary">Jakarta</span>
+                  </div>
+                </div>
+               </div>
+            </div>
+
+          </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </section>
+
+    </main>
+
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html> 
