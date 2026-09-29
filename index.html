@@ -21,276 +21,8 @@
     />
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
-    <style>
-      .nav-item > a {
-        font-size: 12px;
-      }
 
-      .nav-item > .nav-link:hover,
-      .active {
-        color: rgb(131, 19, 131) !important;
-        border-bottom: 2px solid rgb(131, 19, 131);
-      }
-
-      body {
-        background-color: pink;
-        color: black;
-        -webkit-font-smoothing: antialiased;
-      }
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      .font-display {
-        font-family: "Quicksand", sans-serif;
-        font-weight: 700;
-        color: black;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-
-      .bg-custom {
-        background-color: rgba(212, 107, 151, 0.8);
-      }
-
-      .nav-item > a {
-        font-size: 14px;
-      }
-
-      .text-content h1 {
-        font-size: 3rem;
-        line-height: 1.12;
-      }
-
-      @media (max-width: 768px) {
-        .text-content h1 {
-          font-size: 2rem;
-        }
-      }
-
-      .hero-section {
-        position: relative;
-        overflow: hidden;
-        padding: 4rem 0 5rem;
-      }
-
-      /* Maskot animasi */
-      @keyframes floatmascot {
-        0%,
-        100% {
-          transform: translateY(0px) rotate(0deg);
-        }
-        50% {
-          transform: translateY(-10px) rotate(1.5deg);
-        }
-      }
-      .animate-mascot {
-        animation: floatMascot 4.5s ease-in-out infinite;
-      }
-
-      .hero-image-wrapper {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .hero-pod {
-        position: absolute;
-        inset: 1rem;
-        background: linear-gradient(
-          180deg,
-          #fff 0%,
-          rgba(252, 231, 236, 0.4) 60%,
-          #fff8f0 100%
-        );
-        border-radius: 44px;
-        box-shadow: 0 14px 28px -6px rgba(252, 231, 236, 0.4);
-        border: 4px solid #fff;
-        transform: rotate(2deg);
-      }
-
-      /* TRUST BAR */
-      .trust-bar {
-        padding: 2rem 0;
-        background-color: #fff8f0;
-        border-top: 1px solid #fff;
-        border-bottom: 1px solid #73575c;
-      }
-      .trust-icon {
-        width: 40px;
-        height: 40px;
-        border-radius: 12px;
-        background-color: floralwhite;
-        color: black;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-      }
-
-      /* =============== KATEGORI =============== */
-      .kategori-card {
-        background: #fff;
-        border: 1px solid  #73575c;
-        border-radius: 24px;
-        padding: 1.5rem 1rem;
-        text-align: center;
-        transition: all 0.3s ease;
-        cursor: pointer;
-        height: 100%;
-        margin-top: 15px;
-      }
-      .kategori-card:hover {
-        box-shadow: 0 14px 28px -6px rgb(131, 19, 131);
-        transform: translate(-3px);
-      }
-      .kategori-icon {
-        width: 64px;
-        height: 64px;
-        margin: 0 auto 1rem;
-        border-radius: 16px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.75rem;
-        background-color: pink;
-        color: blue;
-        transition: transform 0.3s ease;
-      }
-      .text-green{
-        display: block;
-        text-align: center;
-        
-      }
-      .kategori-card:hover .kategori-icon {transform: scale(1.1); }
-
-      /* ==================== BEST SELLER ==================== */
-      .bestseller-section {
-        padding: 4rem 0;
-        background-color: #fff;
-        border-top: 1px solid #F2CED6;
-        border-bottom: 1px solid #F2CED6;
-      }
-      .product-card {
-        background-color: #FFF2F5;
-        border: 1px solid #F2CED6;
-        border-radius: 30px;
-        padding: 1.25rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100%;
-        transition: all 0.3s ease;
-      }
-      .product-card:hover {
-        box-shadow: 0 14px 28px -6px rgba(216, 67, 96, 0.12);
-      }
-      .product-img-wrap {
-        position: relative;
-        height: 220px;
-        background-color: #fff8f0;
-        border: 1px solid #F2CED6;
-        border-radius: 22px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-      }
-      .product-img-wrap.choco {background-color: rgba(255, 238, 200); }
-      .product-tag {
-        position: absolute;
-        top: 12px;
-        left: 12px;
-        background-color: rgb(255, 255, 255, 0.95);
-        padding: 0.25rem 0.75rem;
-        border-radius: 999px;
-        font-size: 11px;
-        font-weight: 700;
-        color: #D84360;
-        border: 1px solid #F2CED6;
-        display: flex;
-        align-items: center;
-        gap: 0.4rem;
-      }
-      .product-tag.green { color: #5B8A61; }
-      .product-tag .dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background-color: #D84360;
-      }
-      .product-tag.green .dot { background-color: #5B8A61; }
-      .product-icon {
-        width: 200px;
-        height: 200px;
-        transition: transform 0.3s ease;
-      }
-      .product-card:hover .product-icon { transform: scale(1.05); }
-
-      .product-footer {
-        margin-top: 1.5rem;
-        padding-top: 1rem;
-        border-top: 1px solid rgba(242, 206, 214, 0.6);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      .tentang-section { padding: 4rem 0; }
-.tentang-card {
-  background-color: #fff8f0;
-  border: 1px solid #f2CED6;
-  border-radius: 36px;
-  padding: 3rem 2rem;
-  box-shadow: 0 14px -6px rgba(216, 67, 96, 0.12);
-}
-
-.mascot-badge-circle {
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  padding: 1rem;
-}
-
-.testimoni-section {
-    padding: 4rem 0;
-    background-color: palevioletred ;
-    border-top: 1px solid #F2CED6;
-    border-bottom: 1px solid #F2CED6;
-}
-
-.testi-card {
-    background-color: #FFF2F5;
-    border: 1px solid #F2CED6;
-    border-radius: 24px;
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-}
-
-.testi-avatar {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700;
-    font-size: 12px;
-    background-color: #FCE7EC;
-    color: #D84360;
-}
-
-.testi-avatar.cream {
-    background-color: #FFF8F0;
-    color: #2C1A1D;
-}
-    </style>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <!-- NAVBAR -->
@@ -792,7 +524,7 @@
                   <img src="gambar/risol remove.png" alt="" class="img-fluid">
                   </div>
                   <h3 class="h5 mt-4">Risol Fanya, Camilan Favorit</h3>
-                  <p class="small text-secondary mb-0">Risol Fanya hadir dengan pilihan rasa yang cocok dinikmati kapan saja, baik saat santai maupun bersama orang-orang tersayang.l;'
+                  <p class="small text-secondary mb-0">Risol Fanya hadir dengan pilihan rasa yang cocok dinikmati kapan saja, baik saat santai maupun bersama orang-orang tersayang.
 
                   </p>
                 </div>
@@ -986,6 +718,135 @@
           </div>
         </div>
         </section>
+        
+        <!-- GALERI -->
+        <section id="galeri" class="galeri-section">
+        <div class="container">
+          <div class="galeri-heading text-center">
+            <span>#Risol Fanya</span>
+            <h2>Momen Seru Di Instagram</h2>
+            <p>Intip Berbagai Momen Dan Keseruan Bersama Risol Fanya</p>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-6 col-md-3">
+              <a href="" class="instagram-card">
+                <img src="gambar/aqeelaa.png" alt="Galeri Risol Fanya" />
+              </a>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <a href="" class="instagram-card">
+                <img src="gambar/fattahh.png" alt="Galeri Risol Fanya" />
+              </a>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <a href="" class="instagram-card">
+                <img src="gambar/mohann.png" alt="Galeri Risol Fanya" />
+              </a>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <a href="" class="instagram-card">
+                <img src="gambar/nicolee.png" alt="Galeri Risol Fanya" />
+              </a>
+            </div>
+          </div>
+
+          <div class="text-center mt-4">
+            <a href="" class="btn-instagram">
+              <i class="bi bi-instagram"></i>
+              Lihat Instagram #Risol Fanya
+            </a>
+          </div>
+        </div>
+      </section>
+      
+      <!-- ==================== CTA ==================== -->
+      <section class="cta-section">
+        <div class="container">
+          <div class="cta-box">
+             <div class="row align-items-center g-4 position-relative" style="z-index: 1;">
+              <div class="col-md-8 text-center text-md-start">
+                <h2 class="text-white mb-2 ">Yuk, Cobain Risol Fanya!</h2>
+                <p class="text-white-50 mb-0">
+                  Pilihan risol lezat dengan berbagai varian rasa, cocok untuk ngemil sendiri atau berbagi bersama orang tersayang.
+                </p>
+              </div>
+              <div class="col-md-4 text-center text-md-end">
+                <a href="#bestseller" class="btn btn-light fw-bold text-danger px-4 py-3 rounded-4">
+                   Pesan Sekarang
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== FOOTER ===================== -->
+<footer class="footer-tntyna">
+    <div class="container">
+        <div class="row g-4 pb-4 border-bottom" style="border-color: rgba(242, 206, 214, 0.6) !important;">
+            <div class="col-md-4">
+                <div class="d-flex align-items-center mb-3">
+                    <img src="gambar/logo_risol-removebg.png" alt="" width="48" class="me-2" />
+                    <span class="font-display fs-4 fw-bold">
+                        Risol Fanya<span class="text-danger">.</span>
+                    </span>
+                </div>
+                <p class="small text-secondary mb-2">
+                    Risol Fanya, camilan lezat dengan kulit renyah dan isian yang nikmat,
+                    cocok untuk menemani setiap momen.
+                </p>
+                <p class="small fw-semibold mb-0">
+                    Jam Operasional: 15:00 - 19:00 WIB
+                </p>
+            </div>
+            <div class="col-6 col-md-2">
+                <h4>Navigasi</h4>
+                <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#kategori">Kategori Produk</a></li>
+                    <li><a href="#bestseller">Best Seller</a></li>
+                    <li><a href="#tentang">Tentang Kami</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md-3">
+                <h4>Informasi</h4>
+                <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+                    <li><a href="#">Menu Risol</a></li>
+                    <li><a href="#">Risol Ayam</a></li>
+                    <li><a href="#">Risol Mayo</a></li>
+                    <li><a href="#">Risol Coklat</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h4>Hubungi Kami</h4>
+                <p class="small text-secondary mb-3">
+                    Silakan hubungi Risol Fanya untuk informasi produk dan pemesanan.
+                </p>
+                <div class="d-flex align-items-center gap-2">
+                    <a href="#" class="social-btn" aria-label="Instagram Risol Fanya">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="#" class="social-btn" aria-label="WhatsApp Pemesanan Risol Fanya">
+                        <i class="bi bi-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="pt-3 d-flex flex-column flex-sm-row justify-content-between align-items-center small text-secondary gap-2">
+            <p class="mb-0">
+                © 2026 Risol Fanya. Seluruh hak cipta dilindungi undang-undang.
+            </p>
+            <p class="mb-0">
+                Dibuat dengan penuh cinta untuk pecinta Risol Fanya.
+            </p>
+
+        </div>
+    </div>
+</footer>
 
     </main>
 
